@@ -22,7 +22,7 @@
 
 ## Deployment và Workload
 
-**8)** Trong thực tế sẽ làm việc với Deployment thay vì làm việc với pod , vì Deployment cũng là trừu tượng của pod , nó có thể kiểm soát pod, cấu hình pod
+**8)** Trong thực tế sẽ làm việc với Deployment thay vì làm việc với pod , vì Deployment cũng là trừu tượng của pod , nó có thể kiểm soát pod, cấu hình pod, kiểm soát số lượng replicas của pod, cách pod được thay thế, hồi sinh
 
 **9)** Deployment là quá trình clone Node , tọa ra bản copy replica để execute HA
 
@@ -82,3 +82,7 @@ service như 1 quán bar cố định(k nặng xử lí logic), kube-proxy đi�
 **32)** Ingress định tuyến nhưng ingress controller mới là thành phần đại diện làm việc định tuyến
 
 **33)** Persistent Volume (PV) và PersistentClaimVolume(PVC) , PV là ổ đĩa cứng vật lý , PVC là đơn xin cấp không gian lưu trữ.
+
+**34)** Có 4 chiến lược deploy, RollingUpdate, Recreate, Blue-Green, Canary
+
+**35)** Có 4 lợi ích : Scalable(thêm node) , HA(có thể  fixed số pod, or thay đổi min or max số pod theo 1 tiêu chí nào đó(ví dụ RAM)), 

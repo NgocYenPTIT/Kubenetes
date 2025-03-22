@@ -31,13 +31,13 @@ data:
       timeout connect 5000
       timeout client 50000
       timeout server 50000
-      errorfile 400 /etc/haproxy/errors/400.http
-      errorfile 403 /etc/haproxy/errors/403.http
-      errorfile 408 /etc/haproxy/errors/408.http
-      errorfile 500 /etc/haproxy/errors/500.http
-      errorfile 502 /etc/haproxy/errors/502.http
-      errorfile 503 /etc/haproxy/errors/503.http
-      errorfile 504 /etc/haproxy/errors/504.http
+      # errorfile 400 /etc/haproxy/errors/400.http
+      # errorfile 403 /etc/haproxy/errors/403.http
+      # errorfile 408 /etc/haproxy/errors/408.http
+      # errorfile 500 /etc/haproxy/errors/500.http
+      # errorfile 502 /etc/haproxy/errors/502.http
+      # errorfile 503 /etc/haproxy/errors/503.http
+      # errorfile 504 /etc/haproxy/errors/504.http
 
     frontend http_front
       bind *:80
@@ -46,7 +46,7 @@ data:
 
     backend http_back
       balance roundrobin
-      server server1 127.0.0.1:80 check  
+      server server1 express-backend-service:80 check  
       stats uri /haproxy?stats
       # Thêm cấu hình rate limiting ở đây
       stick-table type ip size 100k expire 30m store http_req_rate(10s)
